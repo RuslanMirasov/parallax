@@ -4,23 +4,65 @@
 @import "body";
 
 .section--hero {
-  z-index: 2;
-}
-
-.section--about {
-  background: rgb(31, 31, 31);
   z-index: 1;
 }
 
+.section--about {
+  z-index: 2;
+}
+
 .bg {
-  display: block;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background: url("https://sotni.ru/wp-content/uploads/2023/08/stol-s-edoi-17.webp")
-    no-repeat center center;
-  background-size: cover;
-  transition: 0s;
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    position: absolute;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  &.bg--mountain1 {
+    top: 3%;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      left: 0px;
+      top: 70%;
+      background: #776cb1;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+  &.bg--sun {
+    top: 100%;
+    img {
+      object-fit: contain;
+    }
+  }
+  &.bg--field2 {
+    top: 20%;
+    img {
+      object-fit: contain;
+      height: auto;
+      top: 0px;
+    }
+  }
+  &.bg--field1 {
+    top: 40%;
+  }
+  &.bg--footer {
+    top: 60%;
+    img {
+      height: auto;
+      bottom: 0px;
+    }
+  }
 }

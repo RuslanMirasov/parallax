@@ -20,9 +20,10 @@ ol {
 }
 
 [data-parallax] {
-  position: relative;
-  width: 400px;
-  height: 500px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
   transition: transform 1.5s cubic-bezier(0, 0.63, 0, 0.98);
 }
 
@@ -45,25 +46,70 @@ ol {
   width: 100%;
   height: auto;
   overflow: hidden;
+  background: #776cb1;
 }
 
 .section--hero {
-  z-index: 2;
-}
-
-.section--about {
-  background: rgb(31, 31, 31);
   z-index: 1;
 }
 
-.bg {
+.section--about {
+  z-index: 2;
+}
+
+.bg picture {
   display: block;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   width: 100%;
   height: 100%;
-  background: url("https://sotni.ru/wp-content/uploads/2023/08/stol-s-edoi-17.webp") no-repeat center center;
-  background-size: cover;
-  transition: 0s;
+}
+.bg img {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.bg.bg--mountain1 {
+  top: 3%;
+}
+.bg.bg--mountain1:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 70%;
+  background: #776cb1;
+}
+.bg.bg--mountain1 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.bg.bg--sun {
+  top: 100%;
+}
+.bg.bg--sun img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.bg.bg--field2 {
+  top: 20%;
+}
+.bg.bg--field2 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: auto;
+  top: 0px;
+}
+.bg.bg--field1 {
+  top: 40%;
+}
+.bg.bg--footer {
+  top: 60%;
+}
+.bg.bg--footer img {
+  height: auto;
+  bottom: 0px;
 }
